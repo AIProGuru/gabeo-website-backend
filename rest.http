@@ -1,0 +1,34 @@
+### User sing up endpoint
+POST http://localhost:3001/v1/user
+Content-Type: application/json
+
+{
+    "website": "mysite.com",
+    "email": "123@1aaaaa223.com",
+    "password": "secret123"
+}
+### User sing in endpoint
+POST http://localhost:3001/v1/user/login
+Content-Type: application/json
+
+{
+    "email": "123@123.com",
+    "password": "secret123"
+}
+
+###  Get a user profile endpoint
+GET http://localhost:3001/v1/user
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjEyM0AxMjMuY29tIiwiaWF0IjoxNjY2MzMwMTI5LCJleHAiOjE2NjYzMzEwMjl9.P8LGiTCBbrAur1v2U4BhCdwCWB4PGm56e3eDJHUE94M
+
+### Get refresh token 
+Get http://localhost:3001/v1/tokens
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjEyM0AxMjMuY29tIiwiaWF0IjoxNjY2NDEyOTE4LCJleHAiOjE2NjkwMDQ5MTh9.ZZrXDaVDhu3k9bpHZ4bbfhoO0pFG3wB1bf9E6U-rDJ8
+
+### reset password endpoint
+
+POST http://localhost:3001/v1/user/reset-password
+Content-Type: application/json
+
+{
+    "email": "123@123.com"
+}

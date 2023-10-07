@@ -43,6 +43,7 @@ router.post("/", async (req, res) => {
       phone,
       organization,
     };
+    console.log(user);
     const result = await insertUser(user);
 
     console.log(result);

@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
-  name: {
+  full_name: {
     type: String,
     required: true,
     maxlength: 50,
@@ -19,7 +19,7 @@ const UserSchema = new Schema({
     required: true,
     maxlength: 50,
   },
-  company: {
+  organization: {
     type: String,
     maxlength: 100,
     required: true,

@@ -49,15 +49,15 @@ router.post("/", async (req, res) => {
 
     const mailOptions = {
       from: "david0220anderson@gmail.com",
-      to: "devlopersuper1212@gmail.com", // Your email address
+      to: "divyang@gabeo.ai", // Your email address
       subject: "New User Signup",
       html: `A new user signed up:
         <ul>
           <li>Username: ${full_name}</li>
           <li>Email: ${email}</li>
-          <li>Email: ${phone}</li>
-          <li>Email: ${role}</li>
-          <li>Email: ${organization}</li>
+          <li>Phone Number: ${phone}</li>
+          <li>Role: ${role}</li>
+          <li>Organization: ${organization}</li>
         </ul>`,
     };
 

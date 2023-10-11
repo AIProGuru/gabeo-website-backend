@@ -1,4 +1,5 @@
 const express = require("express");
+const transporter = require("../email/email");
 const {
   insertUser,
   getUserByEmail,
@@ -45,6 +46,28 @@ router.post("/", async (req, res) => {
     };
     console.log(user);
     const result = await insertUser(user);
+
+    const mailOptions = {
+      from: "david0220anderson@gmail.com",
+      to: "devlopersuper1212@gmail.com", // Your email address
+      subject: "New User Signup",
+      html: `A new user signed up:
+        <ul>
+          <li>Username: ${full_name}</li>
+          <li>Email: ${email}</li>
+          <li>Email: ${phone}</li>
+          <li>Email: ${role}</li>
+          <li>Email: ${organization}</li>
+        </ul>`,
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        console.log("Email not sent:", error);
+      } else {
+        console.log("Email sent:", info.response);
+      }
+    });
 
     console.log(result);
     res.json({ status: "success", message: "new user created" });
